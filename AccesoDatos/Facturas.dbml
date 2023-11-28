@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SAP_DB" Class="FacturasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LENOVOL340;Initial Catalog=SAP_DB;Integrated Security=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="SAP_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ConsultaFactura" Method="sp_ConsultaFactura">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ConsultaFacturaResult">
+      <Column Name="Factura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_Producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EliminaFactura" Method="sp_EliminaFactura">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertayModificaFactura" Method="sp_InsertayModificaFactura">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idP" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CancelaFacturas" Method="sp_CancelaFacturas">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

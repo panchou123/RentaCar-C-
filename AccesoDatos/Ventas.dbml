@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SAP_DB" Class="VentasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LENOVOL340;Initial Catalog=SAP_DB;Integrated Security=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="SAP_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ConsultaVentas" Method="sp_ConsultaVentas">
+    <ElementType Name="sp_ConsultaVentasResult">
+      <Column Name="Id_Ventas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Factura" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IVA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_EliminarVenta" Method="sp_EliminarVenta">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertarVenta" Method="sp_InsertarVenta">
+    <Parameter Name="Fac" Parameter="fac" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cliente" Parameter="cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sub" Parameter="sub" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="IVA" Parameter="iVA" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EliminaVentasCliente" Method="sp_EliminaVentasCliente">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

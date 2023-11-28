@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SAP_DB" Class="ClientesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LENOVOL340;Initial Catalog=SAP_DB;Integrated Security=True" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="SAP_DBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.sp_ElieminarCliente" Method="sp_ElieminarCliente">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_InsertayModificaClientes" Method="sp_InsertayModificaClientes">
+    <Parameter Name="Id_Cliente" Parameter="id_Cliente" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cliente" Parameter="cliente" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ConsultaClientes" Method="sp_ConsultaClientes">
+    <ElementType Name="sp_ConsultaClientesResult">
+      <Column Name="Id_Cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
